@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "hedera-agent-kit": "^1.0.6"
+  }
+}
