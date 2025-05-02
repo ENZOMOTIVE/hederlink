@@ -1,109 +1,131 @@
-# Hedera Agent Kit
+# HederLink: Bridging Blockchain with WhatsApp Messaging
 
-Welcome to the **Hedera Agent Kit**! This project aims to provide a LangChain-compatible toolkit for interacting with the Hedera Network. The focus is on a minimal, easy-to-use set of functions, while staying flexible for future enhancements.
+**HederLink** is an AI-powered WhatsApp-based messaging agent built using the **Hedera Agent Kit**, enabling seamless interactions with the **Hedera blockchain** directly through WhatsApp text commands. By leveraging Hedera’s fast, secure, and eco-friendly network, HederLink brings blockchain accessibility to over 2 billion WhatsApp users globally.
 
-## Overview
+Unlike Telegram-based blockchain bots, HederLink operates natively within WhatsApp, making crypto transactions, NFT management, and decentralized interactions as easy as sending a text.
 
-- **Agent Interaction**: Make on-chain calls to Hedera (e.g., create tokens, post messages to consensus).
-- **Lightweight**: Designed to get you started quickly with a minimal set of features.
-- **Community-Driven**: We encourage developers of all skill levels to contribute.
+---
 
-## Current Features
+## 🔑 Key Features (Current & Roadmap)
 
-1. **Native Hedera Token Service (HTS)**:
-    - Create fungible tokens with minimal parameters (name, symbol, decimals, supply, etc.).
-    - Mint additional tokens to existing token accounts.
+### ✅ **Implemented**
 
-2. **Token Operations**:
-    - **Create Fungible Tokens (FT)**: Easily create and configure new fungible tokens.
-    - **Create Non-fungible Tokens (NFT)**: Easily create and configure new non-fungible tokens.
-    - **Transfer Tokens**: Transfer tokens between accounts.
-    - **Associate / Dissociate Tokens**: Associate a token to an account or dissociate it as needed.
-    - **Reject Tokens**: Reject a token from an account.
+- **Native Hedera Token Service:**
+  - ✔ Fungible Token Creation (name, symbol, decimals, supply)
+  - ✔ Mint Token
+  - ✔ Basic Token Transfer (send HBAR or Hedera tokens to WhatsApp contacts)
+  - ✔ Fetch Token Info (retrieve metadata)
 
-3. **HBAR Transactions**:
-    - Transfer HBAR between accounts.
+- **Native Hedera Consensus Service:**
+  - ✔ Create Topic (setup topics for messaging/consensus)
+  - ✔ Publish Messages (send messages to a topic)
 
-4. **Airdrop Management**:
-    - Airdrop tokens to multiple recipients.
-    - Claim a pending airdrop.
+- **AI Financial Assistant:**
+  - ✔ Transaction recommendations
+  - ✔ Fraud detection
+  - ✔ Cost optimization
 
-5. **Token Balance Queries**:
-    - Get HBAR balances of an account.
-    - Get HTS token balances for a specific token ID.
-    - Retrieve all token balances for an account.
-    - Get token holders for a specific token.
+- **CoinGecko Integration:**
+  - ✔ Live crypto prices & trends
+  - ✔ Currency conversions
 
-6. **Topic Management (HCS)**:
-    - **Create Topics**: Create new topics for Hedera Consensus Service (HCS).
-    - **Delete Topics**: Delete an existing topic.
-    - **Submit Topic Messages**: Send messages to a specific topic.
-    - **Get Topic Info**: Retrieve information about a specific topic.
-    - **Get Topic Messages**: Fetch messages from a specific topic.
+- **NFT Viewer (via HashPack/OpenSea):**
+  - ✔ View NFTs linked to your wallet inside WhatsApp
 
-### Note
-The methods in the HederaAgentKit class are fully implemented and functional for interacting with the Hedera network (e.g., creating tokens, transferring assets, managing airdrops). However, Langchain tools for most of these methods and operations are not implemented by default.
+- **Custom News() Plugin:**
+  - ✔ Fetch real-time news articles, including global events
 
-### Details
-For further details check [HederaAgentKit Readme](./src/agent/README.md).
+---
 
-## Getting Started
+### 🚧 **Upcoming Features (Roadmap)**
 
-```bash
-npm i hedera-agent-kit
-```
+- **Native Hedera Token Service:**
+  - ⏳ Non-Fungible Token Creation (core attributes)
 
-LangChain/ LangGraph quick start:
+- **Swapping on DEXs:**
+  - ⏳ Token Swaps (e.g., swap HBAR for other tokens)
 
-```js
-import { HederaAgentKit, createHederaTools } from 'hedera-agent-kit';
-import { ToolNode } from '@langchain/langgraph/prebuilt';
+- **Future Extensions:**
+  - 🔜 Expanded token functionality (airdrop APIs, advanced config)
+  - 🔜 Hedera Smart Contract Service (support via SDK & EVM)
+  - 🔜 Security enhancements (multi-sig, RBAC)
+  - 🔜 Performance optimizations (caching, concurrency)
+  - 🔜 CLI tools for faster interaction with Hedera Agent Kit
 
-const hederaAgentKit = new HederaAgentKit(
-  '0.0.12345', // Replace with your account ID
-  '0x.......', // Replace with your private key
-  'testnet',   // Replace with your selected network
-);
-const hederaAgentKitTools = createHederaTools(hederaAgentKit);
-const toolsNode = new ToolNode(tools);
+---
 
-```
-- `hederaAgentKitTools` is an array of `Tool` instances
-  (from `@langchain/core/tools`).
-- `toolsNode` can be used in any LangGraph workflow,
-  for example `workflow.addNode('toolsNode', toolsNode)`.
+## 🤖 AI-Powered Blockchain Interactions
 
-## Local development
+HederLink uses **Natural Language Processing (NLP)** to interpret WhatsApp commands into blockchain actions.  
+Key AI-driven functionalities:
 
-1. **Clone** the repo:
+- ✅ Transaction pattern fraud detection
+- ✅ Optimized transaction routes
+- ✅ AI-generated financial insights
+- ✅ Market predictions powered by **Allora AI**
 
-```bash
-git clone https://github.com/hedera-dev/hedera-agent-kit.git
-```
+---
 
-2. Install dependencies:
+## 🔗 Supported Integrations
 
-```bash
-cd hedera-agent-kit
-npm install
-```
+- ✔ Hedera Hashgraph (via Hedera Agent Kit)
+- ✔ HashPack Wallet & OpenSea (NFT viewing)
+- ✔ CoinGecko API
+- ✔ Polymarket Prediction Markets
+- ✔ Allora AI for price forecasting
+- ✔ Zerepy for security
 
-3. Configure environment variables (e.g., `OPENAI_API_KEY`, `HEDERA_ACCOUNT_ID`, `HEDERA_PRIVATE_KEY`) in a `.env` file.
+---
 
-4. Test the kit:
+## ⚡ Challenges & Solutions
 
-```bash
- npm run test
-```
+| Challenge                   | Solution                                                 |
+|----------------------------|----------------------------------------------------------|
+| WhatsApp API Limitations     | Middleware via Hedera Agent Kit for secure interactions  |
+| Real-Time Data Retrieval     | Implemented caching and API batching                     |
+| Secure Authentication        | MFA & encrypted key storage for wallet management       |
+| Market Volatility Risks      | Integrated Allora AI for predictive analytics           |
+| Privacy & Security Concerns  | Leveraged Zerepy for enhanced security                  |
 
-## Contributing
+---
 
-We welcome contributions! Please see our [CONTRIBUTING.md](https://github.com/hedera-dev/hedera-agent-kit/blob/main/CONTRIBUTING.md) for details on our process, how to get started, and how to sign your commits under the DCO.
+## 🎯 Vision
 
-## Roadmap
+HederLink’s mission is to make blockchain transactions as easy as texting. By integrating AI, WhatsApp, and Hedera, it enables secure, intuitive, and accessible on-chain interactions—no apps, no wallets, no complexity.
 
-For details on upcoming features, check out our [ROADMAP.md](https://github.com/hedera-dev/hedera-agent-kit/blob/main/ROADMAP.md). If you’d like to tackle one of the tasks, look at the open issues on GitHub or create a new one if you don’t see what you’re looking for.
+---
 
-## License
+## 🛠️ Developer Notes
 
-Apache 2.0
+HederLink is powered by the **Hedera Agent Kit** following its development roadmap:
+
+| Roadmap Milestone | Status  |
+|------------------|----------|
+| v0.1 – Token Service (FT)  | ✅ Complete |
+| v0.2 – Consensus Service   | ✅ Complete |
+| v0.3 – Token Swap (DEX)    | 🚧 In Progress |
+
+👉 See [Hedera Agent Kit Roadmap](./ROADMAP.md) for detailed milestones.
+
+We welcome contributions!  
+See [CONTRIBUTING.md](./CONTRIBUTING.md) to learn how to open issues or submit pull requests.
+
+---
+
+## 📩 Contact
+
+For more details, reach out:  
+[LinkedIn - Aayushman Bhaba Padhy](https://www.linkedin.com/in/aayushman-bhaba-padhy/)
+
+---
+
+## 📚 Resources
+
+- [Hedera Agent Kit Documentation](https://github.com/hashgraph/hedera-agent-kit)
+- [HashPack Wallet](https://www.hashpack.app/)
+- [CoinGecko API](https://www.coingecko.com/en/api)
+- [Polymarket](https://polymarket.com/)
+
+---
+
+© 2025 HederLink Project | Built with ❤️ on **Hedera Agent Kit**
