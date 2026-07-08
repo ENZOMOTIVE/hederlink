@@ -129,12 +129,3 @@ For more details, reach out:
 ---
 
 © 2025 HederLink Project | Built with ❤️ on **Hedera Agent Kit**
-
-## Project Metadata
-
-| Field | Details |
-| --- | --- |
-| Repository | `ENZOMOTIVE/hederlink` |
-| Categories | `Agentic AI`, `Protocol` |
-| Primary stack | Express, Node.js, TypeScript |
-
