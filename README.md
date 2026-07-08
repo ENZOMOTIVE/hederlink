@@ -1,8 +1,12 @@
 # HederLink: Bridging Blockchain with WhatsApp Messaging
 
-**HederLink** is an AI-powered WhatsApp-based messaging agent built using the **Hedera Agent Kit**, enabling seamless interactions with the **Hedera blockchain** directly through WhatsApp text commands. By leveraging Hedera’s fast, secure, and eco-friendly network, HederLink brings blockchain accessibility to over 2 billion WhatsApp users globally.
 
-Unlike Telegram-based blockchain bots, HederLink operates natively within WhatsApp, making crypto transactions, NFT management, and decentralized interactions as easy as sending a text.
+## Project Tags
+
+- `Agentic AI`
+- `Protocol`
+
+zed interactions as easy as sending a text.
 
 ---
 
